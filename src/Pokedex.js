@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import pokemonBackground from "./images/pokemonBackground.jpg";
 
 const Pokedex = () => {
 	const { register, handleSubmit, reset } = useForm();
@@ -29,8 +30,35 @@ const Pokedex = () => {
 	};
 
 	return (
-		<div className='container'>
-			<div className='card' style={{ width: "500px", margin: "auto" }}>
+		<div
+			className='container'
+			style={{
+				marginTop: "60px",
+			}}
+		>
+			<img
+				style={{
+					position: "absolute",
+					top: 0,
+					left: 0,
+					height: "100%",
+					width: "100%",
+					display: "block",
+					opacity: 0.3,
+				}}
+				src={pokemonBackground}
+				className='card-img-overlay'
+				alt='background'
+			/>
+			<div
+				className='card'
+				style={{
+					width: "500px",
+					margin: "auto",
+					backgroundColor: "#e8e8e8",
+					opacity: 0.8,
+				}}
+			>
 				<div className='card-header'>
 					<form className='row' onSubmit={handleSubmit(onSubmit)}>
 						<input
@@ -45,7 +73,7 @@ const Pokedex = () => {
 				</div>
 				{pokemonData.map((data) => {
 					return (
-						<div className='data-container'>
+						<div className='container'>
 							<img
 								src={data.sprites["front_default"]}
 								className='rounded mx-auto d-block'
