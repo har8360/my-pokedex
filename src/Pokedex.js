@@ -31,7 +31,7 @@ const Pokedex = () => {
 
 	return (
 		<div
-			className='container'
+			className='container-fluid'
 			style={{
 				marginTop: "60px",
 			}}
@@ -39,6 +39,9 @@ const Pokedex = () => {
 			<img
 				style={{
 					position: "absolute",
+					backgroundPosition: "center",
+					backgroundRepeat: "no-repeat",
+					backgroundSize: "cover",
 					top: 0,
 					left: 0,
 					height: "100%",
@@ -73,7 +76,7 @@ const Pokedex = () => {
 				</div>
 				{pokemonData.map((data) => {
 					return (
-						<div className='container'>
+						<div className='container-fluid'>
 							<img
 								src={data.sprites["front_default"]}
 								className='rounded mx-auto d-block'
